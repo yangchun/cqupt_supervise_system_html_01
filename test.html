@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 可以自己声明一个Div, 用来显示内容, 根据对鼠标位置的侦听, 动态改变Div 的位置 -->
+<table border="1">
+    <tr>
+        <td onmouseover="overShow()" onmouseout="outHide()">文字内容2</td>
+    </tr>
+</table>
+<div id="showDiv" style="position: absolute; background-color: red; border: 1px solid black;"></div>
+<script>
+    function overShow() {
+        var showDiv = document.getElementById('showDiv');
+        showDiv.style.left = event.clientX;
+        showDiv.style.top = event.clientY;
+        showDiv.style.display = 'block';
+        showDiv.innerHTML = '鼠标停留显示内容2';
+    }
+
+    function outHide() {
+        var showDiv = document.getElementById('showDiv');
+        showDiv.style.display = 'none';
+        showDiv.innerHTML = '';
+    }
+</script>
+</body>
+</html>
