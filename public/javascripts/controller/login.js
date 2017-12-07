@@ -5,19 +5,24 @@ loginApp.controller('loginCtrl', function ($scope, $http) {
     $scope.login=function () {
         $http({
             method: 'POST',
+            withCredentials: true,
+            crossDomain: true,
             params:{userName:"test",passWord:$scope.password},
-            url: 'http://localhost:8080/userController/test',
+            url: 'http://localhost:8080/userController/login',
         }).then(function successCallback(response) {
-            window.localStorage.token=response.data.data.token;
-            alert(response.data.data.token);
-            console.log(response.data);
+            if(response.data.code==1){
+                location.href="http://localhost:3000/index"
+            }
         }, function errorCallback(response) {
             // 请求失败执行代码
+            alert("服务端未知异常！");
         });
     }
     $scope.cookie=function () {
         $http({
             headers : {'Authorization' : window.localStorage.token},
+            withCredentials: true,
+            crossDomain: true,
             method: 'GET',
             url: 'http://localhost:8080/userController/getCookies',
         }).then(function successCallback(response) {
