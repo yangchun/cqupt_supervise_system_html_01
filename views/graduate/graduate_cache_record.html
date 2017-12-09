@@ -1,0 +1,98 @@
+<div class="row" ng-init="init()" ng-controller="ProductCtrl" ng-click="">
+    <div class="col-md-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+
+                <form class="form-inline" style="margin-bottom: 12px">
+                    <label>学院:</label>
+                    <input type="text" class="form-control" placeholder="请输入学院">
+                    <label>教师:</label>
+                    <input type="text" class="form-control" placeholder="请输入教师">
+                    <label>课程名:</label>
+                    <input type="text" class="form-control" placeholder="请输入课程名">
+                    <label>课程周次:</label>
+                    <select class="form-control">
+                        <option>1~4周</option>
+                        <option>5~8周</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary btn-sm" style="margin-left: 40px;margin-top: 5px">查询</button>
+                </form>
+
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>学院</th>
+                        <th>教师</th>
+                        <th>课程名</th>
+                        <th>班级</th>
+                        <th>听课时间</th>
+                        <th>课程类别</th>
+                        <th>课程性质</th>
+                        <th>应到人数</th>
+                        <th>实到人数</th>
+                        <th>教学效果总分</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>通信与信息工程学院</td>
+                        <td>胡敏</td>
+                        <td>现代通信网络技术</td>
+                        <td>1123221</td>
+                        <td>2012-12-12</td>
+                        <td>理论</td>
+                        <td>必修</td>
+                        <td>121</td>
+                        <td>110</td>
+                        <td>98</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">听课详情</button>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">修改</button>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>通信与信息工程学院</td>
+                        <td>胡敏</td>
+                        <td>现代通信网络技术</td>
+                        <td>1123221</td>
+                        <td>2012-12-12</td>
+                        <td>理论</td>
+                        <td>必修</td>
+                        <td>121</td>
+                        <td>110</td>
+                        <td>98</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">听课详情</button>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">修改</button>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>通信与信息工程学院</td>
+                        <td>胡敏</td>
+                        <td>现代通信网络技术</td>
+                        <td>1123221</td>
+                        <td>2012-12-12</td>
+                        <td>理论</td>
+                        <td>必修</td>
+                        <td>121</td>
+                        <td>111</td>
+                        <td>98</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">听课详情</button>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">修改</button>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">删除</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../public/javascripts/controller/undergraduate_theory_course.js"></script>

@@ -2,7 +2,7 @@
 <html lang="en" ng-app='index_app'>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>教务督导系统</title>
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
     <link href="../public/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- Toastr style -->
@@ -32,7 +32,7 @@
                             <a class="dropdown-toggle" href>
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">{{nick}}</strong>
+                                <strong class="font-bold">yangchun</strong>
                             </span>
                         </span>
                             </a>
@@ -41,26 +41,34 @@
 
                         </div>
                     </li>
-                    <!-- 商品管理 -->
+                    <!-- 本科教学管理 -->
                     <li>
                         <a href=""><i class="fa fa-gift"></i> <span class="nav-label">本科教学管理</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li ui-sref-active=""><a ui-sref="test">理论课程查询评价</a></li>
-                            <li ui-sref-active=""><a ui-sref="test1" ng-click="clickNavButton(this)">实验课程查询评价</a></li>
-                            <li ui-sref-active=""><a ui-sref="batchImportThirdSkuId" ng-click="clickNavButton(this)">听课记录查询</a></li>
-                            <li ui-sref-active=""><a ui-sref="batchImportThirdSkuId" ng-click="clickNavButton(this)">已评价教师查询</a></li>
-                            <li ui-sref-active=""><a ui-sref="productList" ng-click="clickNavButton(this)">缓存听课记录查询</a></li>
+                            <li ui-sref-active=""><a ui-sref="undergraduate_theory_course">理论课程查询评价</a></li>
+                            <li ui-sref-active=""><a ui-sref="undergraduate_experiment_course" ng-click="clickNavButton(this)">实验课程查询评价</a></li>
+                            <li ui-sref-active=""><a ui-sref="undergraduate_course_record" ng-click="clickNavButton(this)">听课记录查询</a></li>
+                            <li ui-sref-active=""><a ui-sref="undergraduate_recorded_teacher" ng-click="clickNavButton(this)">已评价教师查询</a></li>
+                            <li ui-sref-active=""><a ui-sref="undergraduate_cache_record" ng-click="clickNavButton(this)">缓存听课记录查询</a></li>
                         </ul>
                     </li>
-                    <!-- 库存管理 -->
+                    <!-- 研究生教学管理 -->
                     <li>
                         <a href=""><i class="fa fa-gift"></i> <span class="nav-label">研究生教学管理</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li ui-sref-active=""><a ui-sref="test">理论课程评价</a></li>
-                            <li ui-sref-active=""><a ui-sref="productList" ng-click="clickNavButton(this)">实验课程评价</a></li>
-                            <li ui-sref-active=""><a ui-sref="batchImportThirdSkuId" ng-click="clickNavButton(this)">听课记录查询</a></li>
-                            <li ui-sref-active=""><a ui-sref="batchImportThirdSkuId" ng-click="clickNavButton(this)">已评价教师查询</a></li>
-                            <li ui-sref-active=""><a ui-sref="productList" ng-click="clickNavButton(this)">缓存听课记录查询</a></li>
+                            <li ui-sref-active=""><a ui-sref="graduate_theory_course">理论课程评价</a></li>
+                            <li ui-sref-active=""><a ui-sref="graduate_experiment_course" ng-click="clickNavButton(this)">实验课程评价</a></li>
+                            <li ui-sref-active=""><a ui-sref="graduate_course_record" ng-click="clickNavButton(this)">听课记录查询</a></li>
+                            <li ui-sref-active=""><a ui-sref="graduate_recorded_teacher" ng-click="clickNavButton(this)">已评价教师查询</a></li>
+                            <li ui-sref-active=""><a ui-sref="graduate_cache_record" ng-click="clickNavButton(this)">缓存听课记录查询</a></li>
+                        </ul>
+                    </li>
+                    <!-- 个人中心 -->
+                    <li>
+                        <a href=""><i class="fa fa-gift"></i> <span class="nav-label">个人中心</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li ui-sref-active=""><a ui-sref="graduate_theory_course">基本信息</a></li>
+                            <li ui-sref-active=""><a ui-sref="graduate_experiment_course" ng-click="clickNavButton(this)">我的教学评价</a></li>
                         </ul>
                     </li>
                 </ul>

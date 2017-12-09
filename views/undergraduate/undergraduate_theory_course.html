@@ -1,0 +1,73 @@
+<div class="row" ng-init="init()" ng-controller="ProductCtrl" ng-click="">
+    <div class="col-md-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+
+                <form class="form-inline" style="margin-bottom: 12px">
+                    <label>学院:</label>
+                    <input type="text" class="form-control" placeholder="请输入学院">
+                    <label>教师:</label>
+                    <input type="text" class="form-control" placeholder="请输入教师">
+                    <label>课程号:</label>
+                    <input type="text" class="form-control" placeholder="请输入课程号">
+                    <label>课程名:</label>
+                    <input type="text" class="form-control" placeholder="请输入课程名">
+                    <button type="submit" class="btn btn-primary btn-sm" style="margin-left: 40px;margin-top: 5px">查询</button>
+                </form>
+
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>学院</th>
+                        <th>教师</th>
+                        <th>课程名</th>
+                        <th>班级</th>
+                        <th>上课时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>通信与信息工程学院</td>
+                        <td>胡敏</td>
+                        <td>现代通信网络技术</td>
+                        <td>010612|02,02</td>
+                        <td>周1第5-6节(4316::1-16周);周3第5-6节(4316::1-16周)</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">课程信息</button>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">评价</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>通信与信息工程学院</td>
+                        <td>胡敏</td>
+                        <td>现代通信网络技术</td>
+                        <td>010612|02,02</td>
+                        <td>周1第5-6节(4316::1-16周);周3第5-6节(4316::1-16周)</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">课程信息</button>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">评价</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>通信与信息工程学院</td>
+                        <td>胡敏</td>
+                        <td>现代通信网络技术</td>
+                        <td>010612|02,02</td>
+                        <td>周1第5-6节(4316::1-16周);周3第5-6节(4316::1-16周)</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">课程信息</button>
+                            <button type="button" class="btn btn-info btn-xs" onclick="init()">评价</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../public/javascripts/controller/undergraduate_theory_course.js"></script>

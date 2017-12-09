@@ -6,52 +6,52 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Login</title>
+    <title>教务督导系统</title>
 
-    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../public/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <link href="../public/css/animate.css" rel="stylesheet">
-    <link href="../public/css/style.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="../public/css/login/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/login/demo.css" />
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="../public/css/login/component.css" />
+    <script src="../public/javascripts/login/html5.js"></script>
+    <!--[if IE]>
+    <script src="../public/javascripts/login/html5.js"></script>
+    <!--[endif]-->
 </head>
 
 <body class="gray-bg" ng-app="loginApp" ng-controller="loginCtrl">
 
-<div class="middle-box text-center loginscreen animated fadeInDown">
-    <div>
-        <div>
-
-            <h1 class="logo-name">IN+</h1>
-
+<div class="container demo-1">
+    <div class="content">
+        <div id="large-header" class="large-header">
+            <canvas id="demo-canvas"></canvas>
+            <div class="logo_box">
+                <h3>重庆邮电大学教务督导系统</h3>
+                <form action="#" name="f" method="post">
+                    <div class="input_outer">
+                        <span class="u_user"></span>
+                        <input type="text" id="username" ng-model="username" class="text" style="color: #FFFFFF !important" older="请输入账户" />
+                    </div>
+                    <div class="input_outer">
+                        <span class="us_uer"></span>
+                        <input ng-model="password" id="password" class="text"  style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" />
+                    </div>
+                    <div class="mb2"><a class="act-but submit" href="javascript:;" style="color: #FFFFFF" ng-click="login()">登录</a></div>
+                </form>
+            </div>
         </div>
-        <h3>Welcome to IN+</h3>
-        <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
-            <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
-        </p>
-        <p>Login in. To see it in action.</p>
-        <form class="m-t" role="form">
-            <div class="form-group">
-                <input type="email" class="form-control" placeholder="name" required="true" ng-model="username">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" required="true" ng-model="password">
-            </div>
-            <button class="btn btn-primary block full-width m-b" ng-click="login()">Login</button>
-            <button class="btn btn-primary block full-width m-b" ng-click="cookie()">cookies</button>
-            <a href="#"><small>Forgot password?</small></a>
-            <p class="text-muted text-center"><small>Do not have an account?</small></p>
-        </form>
-        <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
     </div>
-</div>
+</div><!-- /container -->
+
 
 <!-- Mainly scripts -->
 <script src="../public/javascripts/jquery-2.1.1.js"></script>
 <script src="../public/javascripts/bootstrap.min.js"></script>
 <script src="../public/javascripts/angular/angular.min.js"></script>
 <script src="../public/javascripts/controller/login.js"></script>
-
+<script src="../public/javascripts/login/TweenLite.min.js"></script>
+<script src="../public/javascripts/login/EasePack.min.js"></script>
+<script src="../public/javascripts/login/rAF.js"></script>
+<script src="../public/javascripts/login/demo-1.js"></script>
 
 </body>
 

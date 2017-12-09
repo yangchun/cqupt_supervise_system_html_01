@@ -11,7 +11,7 @@ loginApp.controller('loginCtrl', function ($scope, $http) {
             url: 'http://localhost:8080/userController/login',
         }).then(function successCallback(response) {
             if(response.data.code==1){
-                location.href="http://localhost:3000/index"
+                location.href="/index"
             }
         }, function errorCallback(response) {
             // 请求失败执行代码
