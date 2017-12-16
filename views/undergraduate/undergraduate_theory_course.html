@@ -1,73 +1,135 @@
-<div class="row" ng-init="init()" ng-controller="ProductCtrl" ng-click="">
+<style type="text/css">
+    #tb1{
+        table-layout: fixed;
+        width: 100%;
+    }
+    #tb1 td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+<div class="row" ng-controller="undergraduateCourseCtrl" ng-init="serachList()">
     <div class="col-md-12">
         <div class="ibox float-e-margins">
             <div class="ibox-content">
 
                 <form class="form-inline" style="margin-bottom: 12px">
                     <label>学院:</label>
-                    <input type="text" class="form-control" placeholder="请输入学院">
+                    <input type="text" class="form-control" placeholder="请输入学院" ng-model="academy">
                     <label>教师:</label>
-                    <input type="text" class="form-control" placeholder="请输入教师">
+                    <input type="text" class="form-control" placeholder="请输入教师" ng-model="teacher">
                     <label>课程号:</label>
-                    <input type="text" class="form-control" placeholder="请输入课程号">
+                    <input type="text" class="form-control" placeholder="请输入课程号" ng-model="courseNumber">
                     <label>课程名:</label>
-                    <input type="text" class="form-control" placeholder="请输入课程名">
-                    <button type="submit" class="btn btn-primary btn-sm" style="margin-left: 40px;margin-top: 5px">查询</button>
+                    <input type="text" class="form-control" placeholder="请输入课程名" ng-model="courseName">
+                    <button type="submit" class="btn btn-primary btn-sm" style="margin-left: 20px;margin-top: 5px" ng-click="serachList()">查询</button>
                 </form>
 
 
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="tb1">
                     <thead>
                     <tr>
-                        <th>学院</th>
-                        <th>教师</th>
-                        <th>课程名</th>
-                        <th>班级</th>
-                        <th>上课时间</th>
-                        <th>操作</th>
+                        <th width="15%">学院</th>
+                        <th width="8%">教师</th>
+                        <th width="18%">课程名</th>
+                        <th width="22%">班级</th>
+                        <th width="22%">上课时间地点</th>
+                        <th width="15%">操作</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>通信与信息工程学院</td>
-                        <td>胡敏</td>
-                        <td>现代通信网络技术</td>
-                        <td>010612|02,02</td>
-                        <td>周1第5-6节(4316::1-16周);周3第5-6节(4316::1-16周)</td>
-                        <td>
-                            <button type="button" class="btn btn-info btn-xs" onclick="init()">课程信息</button>
-                            <button type="button" class="btn btn-info btn-xs" onclick="init()">评价</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>通信与信息工程学院</td>
-                        <td>胡敏</td>
-                        <td>现代通信网络技术</td>
-                        <td>010612|02,02</td>
-                        <td>周1第5-6节(4316::1-16周);周3第5-6节(4316::1-16周)</td>
-                        <td>
-                            <button type="button" class="btn btn-info btn-xs" onclick="init()">课程信息</button>
-                            <button type="button" class="btn btn-info btn-xs" onclick="init()">评价</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>通信与信息工程学院</td>
-                        <td>胡敏</td>
-                        <td>现代通信网络技术</td>
-                        <td>010612|02,02</td>
-                        <td>周1第5-6节(4316::1-16周);周3第5-6节(4316::1-16周)</td>
-                        <td>
-                            <button type="button" class="btn btn-info btn-xs" onclick="init()">课程信息</button>
-                            <button type="button" class="btn btn-info btn-xs" onclick="init()">评价</button>
+                    <tr ng-repeat="course in courseList">
+                        <td width="15%">{{course.academy}}</td>
+                        <td width="8%">{{course.teacher}}</td>
+                        <td width="18%">{{course.courseName}}</td>
+                        <td width="22%">{{course.classes}}</td>
+                        <td width="22%">{{course.timeAddress}}</td>
+                        <td width="15%">
+                            <button type="button" class="btn btn-info btn-xs" ng-click="serachById(course.id)">课程信息</button>
+                            <button type="button" class="btn btn-info btn-xs" ng-click="evaluation(course.id)">评价</button>
                         </td>
                     </tr>
                     </tbody>
                 </table>
-
-
+                <div style="text-align: center">
+                    <a class="btn btn-danger btn-rounded btn-outline" href="#" ng-click="previousPage()">上一页</a>
+                    <a class="btn btn-danger btn-rounded btn-outline" href="#" ng-click="nextPage()">下一页</a>
+                </div>
             </div>
         </div>
     </div>
+    <!--浮动窗口-->
+    <div class="theme-popover-mask"></div>
+    <div class="theme-popover">
+        <div class="theme-poptit">
+            <a href="javascript:;" title="关闭" class="close" ng-click="closeFloat()">×</a>
+            <h3>课程信息</h3>
+        </div>
+        <div class="theme-popbod dform">
+            <table border="1px" width="600px" ng-init="courseInfo">
+                <tr>
+                    <td width="15%">id</td>
+                    <td width="30%" ng-bind="courseInfo.id"></td>
+                    <td width="15%">年级</td>
+                    <td width="40%" ng-bind="courseInfo.grade"></td>
+                </tr>
+                <tr>
+                    <td width="15%">课程号</td>
+                    <td width="30%" ng-bind="courseInfo.courseNumber"></td>
+                    <td width="15%">课程名</td>
+                    <td width="40%" ng-bind="courseInfo.courseName"></td>
+                </tr>
+                <tr>
+                    <td width="15%">专业名</td>
+                    <td width="30%" ng-bind="courseInfo.professionName"></td>
+                    <td width="15%">任课教师</td>
+                    <td width="40%" ng-bind="courseInfo.teacher"></td>
+                </tr>
+                <tr>
+                    <td width="15%">课程性质</td>
+                    <td width="30%" ng-bind="courseInfo.courseProperty"></td>
+                    <td width="15%">学分</td>
+                    <td width="40%" ng-bind="courseInfo.credit"></td>
+                </tr>
+                <tr>
+                    <td width="15%">选课人数</td>
+                    <td width="30%" ng-bind="courseInfo.studentNumber"></td>
+                    <td width="15%">学院</td>
+                    <td width="40%" ng-bind="courseInfo.academy"></td>
+                </tr>
+                <tr>
+                    <td width="15%">学院编号</td>
+                    <td width="30%" ng-bind="courseInfo.academyNumber"></td>
+                    <td width="15%">课程类别</td>
+                    <td width="40%" ng-bind="courseInfo.courseType"></td>
+                </tr>
+                <tr>
+                    <td width="15%">理论课时</td>
+                    <td width="30%" ng-bind="courseInfo.theoryPeriod"></td>
+                    <td width="15%">实验课时</td>
+                    <td width="40%" ng-bind="courseInfo.experimentPeriod"></td>
+                </tr>
+                <tr>
+                    <td width="100%" colspan="4">班级</td>
+                </tr>
+                <tr>
+                    <td width="100%" colspan="4" ng-bind="courseInfo.classes"></td>
+                </tr>
+                <tr>
+                    <td width="100%" colspan="4">上课时间地点</td>
+                </tr>
+                <tr>
+                    <td width="100%" colspan="4" style="height: 75px" ng-bind="courseInfo.timeAddress"></td>
+                </tr>
+
+
+
+            </table>
+        </div>
+    </div>
+
+
 </div>
 
-<script src="../public/javascripts/controller/undergraduate_theory_course.js"></script>
+
