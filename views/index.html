@@ -12,13 +12,11 @@
     <link href="../public/css/animate.css" rel="stylesheet">
     <link href="../public/css/style.css" rel="stylesheet">
     <!-- Main Inspinia CSS files -->
-    <link href="css/SweetAlert.css" rel="stylesheet">
-    <link href="css/select.min.css" rel="stylesheet">
     <link href="../public/css/style_float.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
 
 </head>
-<body ng-controller="MainCtrl as main">
+<body ng-controller="MainCtrl">
 <!-- Wrapper-->
 <div id="wrapper">
     <!-- Navigation -->
@@ -47,8 +45,8 @@
                         <a href=""><i class="fa fa-gift"></i> <span class="nav-label">本科教学管理</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li ui-sref-active=""><a ui-sref="undergraduate_theory_course">理论课程查询评价</a></li>
-                            <li ui-sref-active=""><a ui-sref="undergraduate_experiment_course" ng-click="clickNavButton(this)">实验课程查询评价</a></li>
-                            <li ui-sref-active=""><a ui-sref="undergraduate_course_record" ng-click="clickNavButton(this)">听课记录查询</a></li>
+                            <li ui-sref-active=""><a ui-sref="undergraduate_experiment_course" ng-click="clickNavButton()">实验课程查询评价</a></li>
+                            <li ui-sref-active=""><a ui-sref="undergraduate_course_record" ng-click="clickNavButton()">听课记录查询</a></li>
                             <li ui-sref-active=""><a ui-sref="undergraduate_recorded_teacher" ng-click="clickNavButton(this)">已评价教师查询</a></li>
                             <li ui-sref-active=""><a ui-sref="undergraduate_cache_record" ng-click="clickNavButton(this)">缓存听课记录查询</a></li>
                         </ul>
@@ -130,6 +128,6 @@
 <script src="../public/javascripts/controller/controller.js"></script>
 <script src="../public/javascripts/controller/router.js"></script>
 <script src="../public/javascripts/controller/undergraduate_theory_course.js"></script>
-
+<script src="../public/javascripts/controller/undergraduate_experiment_course.js"></script>
 </body>
 </html>

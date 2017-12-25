@@ -1,6 +1,7 @@
-function MainCtrl($scope, store, SweetAlert, CONST_WEB_LOGIN_LINK, $location, $translate, $timeout) {
-    $scope.clickNavButton = function (scope) {
+angular.module("index_app").controller('MainCtrl', function ($scope, $timeout) {
+    $scope.clickNavButton = function () {
         console.log('click nav button');
+        alert("asd");
         if ($('body').hasClass('body-small')) {
             $("body").toggleClass("mini-navbar");
             if (!$('body').hasClass('mini-navbar')) {
@@ -21,4 +22,4 @@ function MainCtrl($scope, store, SweetAlert, CONST_WEB_LOGIN_LINK, $location, $t
             }
         }
     };
-}
+});

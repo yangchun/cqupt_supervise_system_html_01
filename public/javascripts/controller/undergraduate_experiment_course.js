@@ -1,13 +1,16 @@
-angular.module("index_app").controller('undergraduateCourseCtrl', function ($scope, $http) {
+/**
+ * Created by Administrator on 2017/12/25 0025.
+ */
+angular.module("index_app").controller('undergraduateExperimentCtrl', function ($scope, $http) {
     var page=1;
     //公共查询
-    $scope.serach = function () {
+    $scope.serachExperiment = function () {
         var params = {
             "academy": $scope.academy,
             "teacher": $scope.teacher,
             "courseNumber": $scope.courseNumber,
             "courseName": $scope.courseName,
-            "courseType":"理论",
+            "courseType":"实验及实践",
             "page":page
         };
         $http({
@@ -26,22 +29,22 @@ angular.module("index_app").controller('undergraduateCourseCtrl', function ($sco
         });
     };
     //查询课程列表
-    $scope.serachList=function () {
+    $scope.serachExperimentList=function () {
         page=1;
-        $scope.serach();
+        $scope.serachExperiment();
     }
-    $scope.previousPage=function(){
+    $scope.previousExperimentPage=function(){
         page=page-1;
         if(page<1){
             page=1;
         }
-        $scope.serach();
+        $scope.serachExperiment();
     }
-    $scope.nextPage=function(){
+    $scope.nextExperimentPage=function(){
         page=page+1;
-        $scope.serach();
+        $scope.serachExperiment();
     }
-    $scope.serachById=function(id){
+    $scope.serachExperimentById=function(id){
         $http({
             method: 'GET',
             withCredentials: true,
@@ -62,11 +65,11 @@ angular.module("index_app").controller('undergraduateCourseCtrl', function ($sco
         $('.theme-popover').slideDown(200);
 
     }
-    $scope.evaluation=function (id) {
+    $scope.evaluationExperiment=function (id) {
 
         alert(id);
     }
-    $scope.closeFloat=function () {
+    $scope.closeExperimentFloat=function () {
         $('.theme-popover-mask').hide();
         $('.theme-popover').slideUp(200);
     }
